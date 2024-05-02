@@ -19,9 +19,19 @@ if __FILE__ == $PROGRAM_NAME
   # Don't forget to add your own!
 
   # BENCHMARK HERE, you can print the average runtime
-  # long_input = []
+  long_input = []
 
-  # 100.times { long_input << rand }
+  100.times { long_input << rand }
+
+  start_time = Time.now
+
+  1000.times do
+    selection_sort([2, 1])
+    selection_sort(long_input)
+  end
+
+  avg_time = (Time.now - start_time) / 2000
+  puts avg_time
 end
 
 # Please add your pseudocode to this file
